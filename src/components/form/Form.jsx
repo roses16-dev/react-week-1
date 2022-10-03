@@ -14,11 +14,11 @@ function Form({todoList, settodoList}){
       <div className="inputSection">
         <div className="inputBox">
             <form onSubmit={addTodo}>
-                <label><h3>제목</h3></label>
+                <label>제목</label>
                 <input className="input is-warning resize" type="text" name="title"></input>
                 <label>내용</label>
                 <input className="input is-warning resize" type="text" name="content"></input>
-                <input type="submit" className="button" value="추가하기"></input>
+                <input type="submit" className="button is-warning" value="추가하기"></input>
             </form>
         </div>
       </div>
