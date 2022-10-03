@@ -5,7 +5,7 @@ function Form({todoList, settodoList}){
 
     const addTodo = (event) => {
         event.preventDefault()
-        settodoList([...todoList, {key: todoList.length +1, title: event.target.title.value, content: event.target.content.value, isDone: false }])
+        settodoList([...todoList, {key: todoList.length +1, title: event.target.title.value || 'notitle', content: event.target.content.value || 'nocontent', isDone: false }])
         event.target.title.value = ""
         event.target.content.value = ""
     }
