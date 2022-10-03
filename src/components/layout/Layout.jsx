@@ -5,7 +5,8 @@ import Form from  '../form/Form.jsx'
 import List from '../list/List.jsx'
 import React, { useState } from "react";
 
-
+// Layout Component
+// todoList 객체도 가지고 있음
 function Layout() {
     let [todoList, settodoList] = useState([
         {
@@ -20,13 +21,13 @@ function Layout() {
           content: '레이아웃고장',
           isDone: true
         }])
-          
-
+      
     return (
         <div className="layout_section">
             <Header />
             <Form todoList={todoList} settodoList={settodoList} key={todoList.key}/>
-            <List todoList={todoList} settodoList={settodoList} key={todoList.key}/>
+            <List title="Working...🎈" todoList={todoList.filter( e => !e.isDone )} settodoList={settodoList} key={todoList.key}/>
+            <List title="Done...✨"    todoList={todoList.filter( e => e.isDone )} settodoList={settodoList} key={todoList.key}/>
         </div>
     )
   }

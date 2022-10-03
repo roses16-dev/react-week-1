@@ -2,9 +2,10 @@ import './style.css'
 
 import Todo from '../todo/Todo.jsx'
 
-function List({todoList, settodoList}){
+// Todo List를 출력해주는 Component
+function List({title, todoList, settodoList}){
     
-    const f_action = (key, action) => {
+    function f_action(key, action){
         if(action === 'delete'){
             settodoList(todoList.filter( e => e.key !== key ))
         } else if(action === 'toggle'){
@@ -14,15 +15,13 @@ function List({todoList, settodoList}){
                 return e
             } ))
         }
-        
     }
+
 
     return (
         <div>
-            <h4 className="title is-4">Working</h4>
-            <div className="listBox">{todoList.filter(e => !e.isDone).map((todoList) => <Todo todoList={todoList} f_action={f_action} key={todoList.key}/>)}</div>
-            <h4 className="title is-4">Done</h4>
-            <div className="listBox">{todoList.filter(e => e.isDone).map((todoList) => <Todo todoList={todoList} f_action={f_action} key={todoList.key}/>)}</div>
+            <h4 className="title is-4">{title}</h4>
+            <div className="listBox">{todoList.map((todoList) => <Todo todoList={todoList} f_action={f_action} key={todoList.key}/>)}</div>
         </div>   
     )
   }
