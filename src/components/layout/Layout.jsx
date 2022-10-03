@@ -22,14 +22,27 @@ function Layout() {
           isDone: true
         }])
       
-    return (
-        <div className="layout_section">
-            <Header />
-            <Form todoList={todoList} settodoList={settodoList} key={todoList.key}/>
-            <List title="Working...🎈" todoList={todoList.filter( e => !e.isDone )} settodoList={settodoList} key={todoList.key}/>
-            <List title="Done...✨"    todoList={todoList.filter( e => e.isDone )} settodoList={settodoList} key={todoList.key}/>
-        </div>
-    )
+  function f_action(key, action){
+    if(action === 'delete'){
+        settodoList(todoList.filter( e => e.key !== key ))
+    } else if(action === 'toggle'){
+        settodoList(todoList.map( e => {
+            console.log(e)
+            if(e.key === key)
+                e.isDone = !e.isDone
+            return e
+        } ))
+    }
+}
+
+  return (
+      <div className="layout_section">
+          <Header />
+          <Form todoList={todoList} settodoList={settodoList} key={todoList.key}/>
+          <List title="Working...🎈" todoList={todoList.filter( e => !e.isDone )} f_action={f_action} key={todoList.key}/>
+          <List title="Done...✨"    todoList={todoList.filter( e => e.isDone )} f_action={f_action} key={todoList.key}/>
+      </div>
+  )
   }
 
 export default Layout;
