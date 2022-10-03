@@ -1,5 +1,6 @@
 import './style.css'
 
+// Header Component
 function Header(){
 
     return (

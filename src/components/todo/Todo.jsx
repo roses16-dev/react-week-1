@@ -1,5 +1,6 @@
 import './style.css'
 
+// 각 Todo 항목을 출력하는 Component
 function Todo({todoList, f_action}){
     return (
       <div className="card">

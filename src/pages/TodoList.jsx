@@ -2,7 +2,9 @@
 import Layout from '../components/layout/Layout.jsx'
 
 function TodoList() {
-    return <Layout />
+    return (
+    <Layout />
+    )
   }
 
 export default TodoList;
