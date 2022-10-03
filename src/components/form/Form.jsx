@@ -1,11 +1,14 @@
 import './style.css'
 
-// Todo 입력 받는 Component
+// 새로운 Todo 입력 받는 Component
 function Form({todoList, settodoList}){
 
+    // 새로운 Todo 입력 및 Form에 남아있는 Value 값을 초기화 시키는 함수
+    let nextKey = todoList[todoList.length-1].key +1
+    console.log(nextKey)
     const addTodo = (event) => {
         event.preventDefault()
-        settodoList([...todoList, {key: todoList.length +1, title: event.target.title.value || 'notitle', content: event.target.content.value || 'nocontent', isDone: false }])
+        settodoList([...todoList, {key: nextKey, title: event.target.title.value || 'notitle', content: event.target.content.value || 'nocontent', isDone: false }])
         event.target.title.value = ""
         event.target.content.value = ""
     }
