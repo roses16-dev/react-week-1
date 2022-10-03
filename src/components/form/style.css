@@ -1,0 +1,28 @@
+.resize{
+    width:30%;
+  }
+  
+  .inputSection{
+    width:100%;
+    height:80px;
+    display: flex;
+  }
+  
+  .inputBox{
+    margin: auto ;
+    display: inline-block;
+    width: 70%; 
+    vertical-align: middle;
+  }
+  
+  .inputBox > label{
+    margin: 15px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .inputBox > button{
+    display: inline-block;
+    margin: auto 15px;
+    width: 150px;
+  }
