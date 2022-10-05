@@ -21,6 +21,13 @@ function Layout() {
             isDone: true
         }])
 
+
+    function f_addTodo(todo){
+        let nextKey = todoList[todoList.length-1].key +1
+        todo.key = nextKey
+        settodoList([...todoList, todo])
+    }
+
     // 각 Todo를 삭제하거나, isDone 변수를 토글해주는 함수
     function f_action(key, action){
         if(action === 'delete'){
@@ -36,7 +43,7 @@ function Layout() {
 
   return (
       <div className="layout_section">
-          <Form todoList = {todoList} settodoList = {settodoList}/>
+          <Form f_addTodo = {f_addTodo}/>
           <List title="Working...🎈" todoList = {todoList.filter( e => !e.isDone )} f_action={f_action}/>
           <List title="Done...✨"    todoList = {todoList.filter( e => e.isDone )} f_action={f_action}/>
       </div>
