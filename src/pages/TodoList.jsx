@@ -1,9 +1,14 @@
 
+import Header from '../components/header/Header.jsx'
 import Layout from '../components/layout/Layout.jsx'
+
 
 function TodoList() {
     return (
-    <Layout />
+      <div>
+        <Header />
+        <Layout />
+    </div>
     )
   }
 

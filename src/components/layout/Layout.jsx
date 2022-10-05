@@ -1,6 +1,5 @@
 
 import './style.css'
-import Header from '../header/Header.jsx'
 import Form from  '../form/Form.jsx'
 import List from '../list/List.jsx'
 import React, { useState } from "react";
@@ -37,8 +36,7 @@ function Layout() {
 
   return (
       <div className="layout_section">
-          <Header />
-          <Form todoList={todoList} settodoList={settodoList}/>
+          <Form todoList = {todoList} settodoList = {settodoList}/>
           <List title="Working...🎈" todoList = {todoList.filter( e => !e.isDone )} f_action={f_action}/>
           <List title="Done...✨"    todoList = {todoList.filter( e => e.isDone )} f_action={f_action}/>
       </div>
