@@ -7,7 +7,7 @@ import React, { useState } from "react";
 // Layout Component
 // todoList 객체도 가지고 있음
 function Layout() {
-    let [todoList, settodoList] = useState([
+    const [todoList, settodoList] = useState([
         {
             key: 1,
             title:'리액트 공부하기',
