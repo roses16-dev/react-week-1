@@ -23,7 +23,7 @@ function Layout() {
 
 
     function f_addTodo(todo){
-        let nextKey = todoList[todoList.length-1].key +1
+        let nextKey = todoList.length ? todoList[todoList.length-1].key + 1 : 0
         todo.key = nextKey
         settodoList([...todoList, todo])
     }
